@@ -8,10 +8,8 @@ struct TileView: View {
     var body: some View {
         VStack {
             if tile.flipped {
-                Image(systemName: "checkmark")
-                    .font(Font.system(size: 120))
-                    .foregroundStyle(Color.green)
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                Text(tile.简体)
+                    .font(Font.system(size: 40))
             } else {
                 Text(tile.word)
                     .font(Font.system(size: 40))
@@ -34,7 +32,7 @@ struct TileView: View {
 }
 
 #Preview {
-    let tile = Tile(word: "二")
+    let tile = Tile(word: "貮", 简体: "二")
     return TileView(tile: tile)
         .onTapGesture {
             tile.flipped.toggle()

@@ -20,9 +20,9 @@ struct WordCanvas: View {
             ForEach(tiles) { tile in
                 TileView(tile: tile)
                     .offset(tile.centeredOffset)
-                    .gesture(DragGesture().onChanged { value in
-                        tile.position = value.location
-                    })
+                    .onTapGesture {
+                        tile.flipped.toggle()
+                    }
             }
             .offset(x: Tile.halfSize)
         }

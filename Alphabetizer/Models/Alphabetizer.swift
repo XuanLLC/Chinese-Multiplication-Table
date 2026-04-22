@@ -65,7 +65,15 @@ class Alphabetizer {
         let newWords = vocab.selectRandomWords(count: tileCount)
         if tiles.isEmpty {
             for word in newWords {
-                tiles.append(Tile(word: word))
+                var 简体 = "一"
+                if word == "貮" {
+                    简体 = "二"
+                } else if word == "叁" {
+                    简体 = "三"
+                } else if word == "肆" {
+                    简体 = "四"
+                }
+                tiles.append(Tile(word: word, 简体: 简体))
             }
         } else {
             // Assign new words to existing tiles
