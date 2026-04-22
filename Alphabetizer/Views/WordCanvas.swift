@@ -8,7 +8,7 @@ struct WordCanvas: View {
     }
 
     var body: some View {
-        ZStack {
+        ZStack {/*
             HStack(spacing: Tile.spacing) {
                 ForEach(tiles) { _ in
                     Rectangle()
@@ -16,7 +16,7 @@ struct WordCanvas: View {
                         .offset(y: -(Tile.size + Tile.halfSize))
                         .frame(width: Tile.placeholderSize, height: Tile.placeholderSize)
                 }
-            }
+            }*/
             ForEach(tiles) { tile in
                 TileView(tile: tile)
                     .offset(tile.centeredOffset)
@@ -55,17 +55,17 @@ extension WordCanvas {
             let midpoint = Double(tiles.count - 1) / 2.0
             let position = Double(index) - midpoint
 
-            tiles[index].position.x = (Tile.size + Tile.spacing) * position
+            tiles[index].position.x = (Tile.边长 + Tile.spacing) * position
             tiles[index].position.y = Tile.halfSize
         }
     }
 }
 
 extension Tile {
-    static let placeholderSize = size - 20.0
-    static let size = 200.0
-    static let halfSize = 100.0
-    static let spacing = 50.0
+    static let placeholderSize = 边长 - 20.0
+    static let 边长 = 100.0
+    static let halfSize = 边长/2
+    static let spacing = halfSize
 
     // Drag from the center of the tile instead of the default top left
     var centeredOffset: CGSize {

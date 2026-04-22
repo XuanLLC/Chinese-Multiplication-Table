@@ -32,22 +32,22 @@ struct Vocabulary {
 }
 
 extension Vocabulary {
-    static let landAnimals = Vocabulary(words: [
-        "Bear",
-        "Duck",
-        "Frog",
-        "Fox",
-        "Goose",
-        "Lizard",
-        "Panda",
-        "Rabbit",
-        "Sheep",
+    static let 九宫 = Vocabulary(words: [
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
     ])
 
-    static let oceanAnimals = Vocabulary(words: [
-        "Crab",
-        "Jellyfish",
-        "Octopus",
-        "Whale",
+    static let 正体 = Vocabulary(words: [
+        "壹",
+        "貮",
+        "叁",
+        "肆",
     ])
 }

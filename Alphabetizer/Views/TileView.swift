@@ -13,13 +13,11 @@ struct TileView: View {
                     .foregroundStyle(Color.green)
                     .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
             } else {
-                Text(tile.icon)
-                    .font(Font.system(size: 80))
                 Text(tile.word)
-                    .font(.title)
+                    .font(Font.system(size: 40))
             }
         }
-        .frame(width: Tile.size - borderWidth * 2, height: Tile.size - borderWidth * 2)
+        .frame(width: Tile.边长 - borderWidth * 2, height: Tile.边长 - borderWidth * 2)
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(borderStyle(), lineWidth: borderWidth))
         .background(Color.purple.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -36,7 +34,7 @@ struct TileView: View {
 }
 
 #Preview {
-    let tile = Tile(word: "Bear")
+    let tile = Tile(word: "二")
     return TileView(tile: tile)
         .onTapGesture {
             tile.flipped.toggle()

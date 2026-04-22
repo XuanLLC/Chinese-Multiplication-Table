@@ -2,14 +2,14 @@ import Foundation
 
 @Observable
 class Alphabetizer {
-    private let tileCount = 3
+    private let tileCount = 4
     private var vocab: Vocabulary
 
     var tiles = [Tile]()
     var score = 0
     var message: Message = .instructions
 
-    init(vocab: Vocabulary = .landAnimals) {
+    init(vocab: Vocabulary = .正体) {
         self.vocab = vocab
         startNewGame()
     }
