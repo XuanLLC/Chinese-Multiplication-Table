@@ -21,9 +21,9 @@ class Alphabetizer {
         // Flip tiles back to words
         for tile in tiles {
             tile.flipped = false
-            print(tile.数)
+            //print(tile.数)
             积 = 积 * (tile.数)
-            print("积："+String(积))
+            //print("积："+String(积))
         }
 
         // 恢复指令 Display instructions

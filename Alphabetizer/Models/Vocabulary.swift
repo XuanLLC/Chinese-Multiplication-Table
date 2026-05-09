@@ -9,7 +9,8 @@ struct Vocabulary {
         while newWords.sorted() == newWords {
             newWords.shuffle()
         }
-        return newWords
+        let 先小后大 = newWords.sorted { Vocabulary.对应数[$0] ?? 0 < Vocabulary.对应数[$1] ?? 0 }
+        return 先小后大
     }
     
     // Each vocabulary word should have a corresponding emoji

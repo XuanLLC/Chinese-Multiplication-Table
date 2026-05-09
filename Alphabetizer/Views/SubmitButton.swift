@@ -7,7 +7,7 @@ struct SubmitButton: View {
         Button {
             alphabetizer.揭晓答案()
         } label: {
-            Image(systemName: "play.circle")
+            Image(systemName: "questionmark.circle")
                 .font(.system(size: 60))
                 .foregroundStyle(Color.white)
                 .padding(.horizontal, 80)
