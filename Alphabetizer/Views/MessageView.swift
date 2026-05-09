@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct MessageView: View {
-    @Environment(Alphabetizer.self) private var alphabetizer
+    @Environment(乘法口诀.self) private var alphabetizer
 
     var body: some View {
         Text(alphabetizer.message)
@@ -10,7 +10,7 @@ struct MessageView: View {
 }
 
 #Preview {
-    let alphabetizer = Alphabetizer()
+    let alphabetizer = 乘法口诀()
     alphabetizer.message = "23"
     return MessageView()
         .environment(alphabetizer)

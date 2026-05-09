@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ScoreView: View {
-    @Environment(Alphabetizer.self) private var alphabetizer
+    @Environment(乘法口诀.self) private var alphabetizer
 
     var body: some View {
         Text("Score: \(alphabetizer.score)")
@@ -13,5 +13,5 @@ struct ScoreView: View {
 
 #Preview {
     ScoreView()
-        .environment(Alphabetizer())
+        .environment(乘法口诀())
 }

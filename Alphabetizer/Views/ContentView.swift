@@ -16,5 +16,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environment(Alphabetizer())
+        .environment(乘法口诀())
 }

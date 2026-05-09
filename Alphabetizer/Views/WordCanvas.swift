@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WordCanvas: View {
-    @Environment(Alphabetizer.self) private var alphabetizer
+    @Environment(乘法口诀.self) private var alphabetizer
     
     private var tiles: [Tile] {
         alphabetizer.tiles
@@ -44,7 +44,7 @@ struct WordCanvas: View {
 
 #Preview {
     WordCanvas()
-        .environment(Alphabetizer())
+        .environment(乘法口诀())
 }
 
 extension WordCanvas {

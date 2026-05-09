@@ -11,3 +11,7 @@ These resources are associated with the [Complete a game with logic](https://dev
 ## Using these resources
 
 Follow the tutorial instructions in section one of [Complete a game with logic](https://developer.apple.com/tutorials/develop-in-swift/complete-a-game-with-logic) to use these resources within the Xcode app.
+
+## 开发笔记
+
+如通过wifi加载app，copy shared cache symbols 很慢，至少需要几十分钟

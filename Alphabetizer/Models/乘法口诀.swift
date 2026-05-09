@@ -1,7 +1,7 @@
 import Foundation
 
 @Observable
-class Alphabetizer {
+class 乘法口诀 {
     private let 字数 = 4
     private var 数字: Vocabulary
 

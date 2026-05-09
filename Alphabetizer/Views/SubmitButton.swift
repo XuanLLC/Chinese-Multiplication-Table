@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SubmitButton: View {
-    @Environment(Alphabetizer.self) private var alphabetizer
+    @Environment(乘法口诀.self) private var alphabetizer
     
     var body: some View {
         Button {
@@ -27,5 +27,5 @@ struct SubmitButton: View {
 
 #Preview {
     SubmitButton()
-        .environment(Alphabetizer())
+        .environment(乘法口诀())
 }
