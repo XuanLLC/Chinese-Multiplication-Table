@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		28B55A962DAF4CBD0050D17E /* Alphabetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alphabetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B55A962DAF4CBD0050D17E /* Chinese Multiplication Table.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chinese Multiplication Table.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		28B55A972DAF4CBD0050D17E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28B55A962DAF4CBD0050D17E /* Alphabetizer.app */,
+				28B55A962DAF4CBD0050D17E /* Chinese Multiplication Table.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			packageProductDependencies = (
 			);
 			productName = Alphabetizer;
-			productReference = 28B55A962DAF4CBD0050D17E /* Alphabetizer.app */;
+			productReference = 28B55A962DAF4CBD0050D17E /* Chinese Multiplication Table.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,8 +265,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cc.apple-sample-code.Alphabetizer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.ChineseMultiplicationTable;
+				PRODUCT_NAME = "Chinese Multiplication Table";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -294,8 +294,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cc.apple-sample-code.Alphabetizer";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cc.ChineseMultiplicationTable;
+				PRODUCT_NAME = "Chinese Multiplication Table";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
