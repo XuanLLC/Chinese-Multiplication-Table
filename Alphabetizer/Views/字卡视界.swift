@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TileView: View {
+struct 字卡视界: View {
     var tile: 字卡
 
     private let borderWidth = 5.0
@@ -33,7 +33,7 @@ struct TileView: View {
 
 #Preview {
     let tile = 字卡(word: "二")
-    return TileView(tile: tile)
+    return 字卡视界(tile: tile)
         .onTapGesture {
             tile.flipped.toggle()
         }

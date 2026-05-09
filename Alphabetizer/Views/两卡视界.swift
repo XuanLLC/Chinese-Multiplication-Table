@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct WordCanvas: View {
+struct 两卡视界: View {
     @Environment(乘法口诀.self) private var alphabetizer
     
     private var tiles: [字卡] {
@@ -8,17 +8,9 @@ struct WordCanvas: View {
     }
 
     var body: some View {
-        ZStack {/*
-            HStack(spacing: Tile.spacing) {
-                ForEach(tiles) { _ in
-                    Rectangle()
-                        .fill(Color.purple.opacity(0.2))
-                        .offset(y: -(Tile.size + Tile.halfSize))
-                        .frame(width: Tile.placeholderSize, height: Tile.placeholderSize)
-                }
-            }*/
+        ZStack {
             ForEach(tiles) { tile in
-                TileView(tile: tile)
+                字卡视界(tile: tile)
                     .offset(tile.centeredOffset)
                     .onTapGesture {
                         tile.flipped.toggle()
@@ -28,7 +20,13 @@ struct WordCanvas: View {
         }
         .onAppear {
             setInitialTilePositions()
-        }/*
+        }
+        .onChange(of: alphabetizer.积输出) {
+            withAnimation {
+                setInitialTilePositions()
+            }
+        }
+        /*
         .onChange(of: alphabetizer.message) { oldValue, newValue in
             switch (oldValue, newValue) {
             case (.youWin, .instructions):
@@ -43,11 +41,11 @@ struct WordCanvas: View {
 }
 
 #Preview {
-    WordCanvas()
+    两卡视界()
         .environment(乘法口诀())
 }
 
-extension WordCanvas {
+extension 两卡视界 {
     private func setInitialTilePositions() {
         // Distribute tiles apart from each other but still centered
         // 0,0 is in the middle of the stack

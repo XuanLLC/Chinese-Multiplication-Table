@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MessageView: View {
+struct 积视界: View {
     @Environment(乘法口诀.self) private var alphabetizer
 
     var body: some View {
@@ -12,6 +12,6 @@ struct MessageView: View {
 #Preview {
     let alphabetizer = 乘法口诀()
     alphabetizer.积输出 = "23"
-    return MessageView()
+    return 积视界()
         .environment(alphabetizer)
 }

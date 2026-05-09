@@ -6,7 +6,7 @@ struct AlphabetizerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            全视界()
                 .environment(alphabetizer)
         }
     }

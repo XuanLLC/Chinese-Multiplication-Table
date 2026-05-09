@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct SubmitButton: View {
+struct 下一个: View {
     @Environment(乘法口诀.self) private var alphabetizer
     
     var body: some View {
@@ -26,6 +26,6 @@ struct SubmitButton: View {
 }
 
 #Preview {
-    SubmitButton()
+    下一个()
         .environment(乘法口诀())
 }
