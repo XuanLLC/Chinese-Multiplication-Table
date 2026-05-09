@@ -15,3 +15,12 @@ Follow the tutorial instructions in section one of [Complete a game with logic](
 ## 开发笔记
 
 如通过wifi加载app，copy shared cache symbols 很慢，至少需要几十分钟
+
+You’re all set.
+We’ll send confirmation and activation details to: f••••••••••••••••••••••e@gmail.com
+Return to Apple Developer.
+Order #W1582406705 还需激活？
+
+Team "Xuan Wu (Personal Team)" is not enrolled in the Apple Developer Program.
+Distribution requires enrollment in the Apple Developer Program. Visit https://developer.apple.com/account to enroll.
+- 据说要48小时才激活，当前5/9 9:00

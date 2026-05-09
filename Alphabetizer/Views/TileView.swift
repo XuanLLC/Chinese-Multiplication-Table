@@ -1,21 +1,21 @@
 import SwiftUI
 
 struct TileView: View {
-    var tile: Tile
+    var tile: 字卡
 
     private let borderWidth = 5.0
 
     var body: some View {
         VStack {
             if tile.flipped {
-                Text(tile.word)
+                Text(tile.字)
                     .font(Font.system(size: 40))
             } else {
-                Text(tile.word)
+                Text(tile.字)
                     .font(Font.system(size: 40))
             }
         }
-        .frame(width: Tile.边长 - borderWidth * 2, height: Tile.边长 - borderWidth * 2)
+        .frame(width: 字卡.边长 - borderWidth * 2, height: 字卡.边长 - borderWidth * 2)
         .overlay(RoundedRectangle(cornerRadius: 16).stroke(borderStyle(), lineWidth: borderWidth))
         .background(Color.purple.opacity(0.5))
         .clipShape(RoundedRectangle(cornerRadius: 16))
@@ -32,7 +32,7 @@ struct TileView: View {
 }
 
 #Preview {
-    let tile = Tile(word: "二")
+    let tile = 字卡(word: "二")
     return TileView(tile: tile)
         .onTapGesture {
             tile.flipped.toggle()

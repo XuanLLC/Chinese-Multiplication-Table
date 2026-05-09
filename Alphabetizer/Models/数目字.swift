@@ -1,6 +1,6 @@
 import Foundation
 
-struct Vocabulary {
+struct 数目字 {
     let words: [String]
 
     /// - returns: `count` unique, random words from `words`, guaranteed unsorted
@@ -9,11 +9,9 @@ struct Vocabulary {
         while newWords.sorted() == newWords {
             newWords.shuffle()
         }
-        let 先小后大 = newWords.sorted { Vocabulary.对应数[$0] ?? 0 < Vocabulary.对应数[$1] ?? 0 }
+        let 先小后大 = newWords.sorted { 数目字.对应数[$0] ?? 0 < 数目字.对应数[$1] ?? 0 }
         return 先小后大
     }
-    
-    // Each vocabulary word should have a corresponding emoji
     
     static let 对应数: [String: Int] = [
         "一": 1,
@@ -28,8 +26,8 @@ struct Vocabulary {
     ]
 }
 
-extension Vocabulary {
-    static let 九宫 = Vocabulary(words: [
+extension 数目字 {
+    static let 九宫 = 数目字(words: [
         "一",
         "二",
         "三",
@@ -41,14 +39,14 @@ extension Vocabulary {
         "九",
     ])
     
-    static let 正体 = Vocabulary(words: [
+    static let 正体 = 数目字(words: [
         "壹",
         "貮",
         "叁",
         "肆",
     ])
     
-    static let 三十五 = Vocabulary(words: [
+    static let 三十五 = 数目字(words: [
         "三",
         "十",
         "五",

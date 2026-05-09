@@ -3,8 +3,8 @@ import SwiftUI
 struct WordCanvas: View {
     @Environment(乘法口诀.self) private var alphabetizer
     
-    private var tiles: [Tile] {
-        alphabetizer.tiles
+    private var tiles: [字卡] {
+        alphabetizer.两字卡
     }
 
     var body: some View {
@@ -24,7 +24,7 @@ struct WordCanvas: View {
                         tile.flipped.toggle()
                     }
             }
-            .offset(x: Tile.halfSize)
+            .offset(x: 字卡.halfSize)
         }
         .onAppear {
             setInitialTilePositions()
@@ -55,13 +55,13 @@ extension WordCanvas {
             let midpoint = Double(tiles.count - 1) / 2.0
             let position = Double(index) - midpoint
 
-            tiles[index].position.x = (Tile.边长 + Tile.spacing) * position
-            tiles[index].position.y = Tile.halfSize
+            tiles[index].position.x = (字卡.边长 + 字卡.spacing) * position
+            tiles[index].position.y = 字卡.halfSize
         }
     }
 }
 
-extension Tile {
+extension 字卡 {
     static let placeholderSize = 边长 - 20.0
     static let 边长 = 100.0
     static let halfSize = 边长/2
@@ -69,6 +69,6 @@ extension Tile {
 
     // Drag from the center of the tile instead of the default top left
     var centeredOffset: CGSize {
-        CGSize(width: position.x - Tile.halfSize, height: position.y - Tile.halfSize)
+        CGSize(width: position.x - 字卡.halfSize, height: position.y - 字卡.halfSize)
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 15) {
             //ScoreView()
             MessageView()
             Spacer()
@@ -10,7 +10,7 @@ struct ContentView: View {
             Spacer()
             SubmitButton()
         }
-        .padding(.top, 50)
+        .padding(.top, 60)
     }
 }
 

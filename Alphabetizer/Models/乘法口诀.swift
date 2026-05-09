@@ -2,14 +2,12 @@ import Foundation
 
 @Observable
 class 乘法口诀 {
-    private let 字数 = 4
-    private var 数字: Vocabulary
+    private var 数字: 数目字
 
-    var tiles = [Tile]()
-    var score = 0
-    var message: String = ""
+    var 两字卡 = [字卡]()
+    var 积输出: String = ""
 
-    init(vocab: Vocabulary = .九宫) {
+    init(vocab: 数目字 = .九宫) {
         self.数字 = vocab
         开新局()
     }
@@ -18,33 +16,30 @@ class 乘法口诀 {
     func 揭晓答案() {
         
         var 积 = 1
-        // Flip tiles back to words
-        for tile in tiles {
+        for tile in 两字卡 {
             tile.flipped = false
             //print(tile.数)
             积 = 积 * (tile.数)
             //print("积："+String(积))
         }
 
-        // 恢复指令 Display instructions
-        message = String(积)
+        积输出 = String(积)
 
         开新局()
     }
     // MARK: private implementation
 
-    /// Updates `tiles` with a new set of unalphabetized words
     private func 开新局() {
         let 两数 = 数字.随机选取几个(count: 2)
-        if tiles.isEmpty {
+        if 两字卡.isEmpty {
             for word in 两数 {
-                tiles.append(Tile(word: word))
+                两字卡.append(字卡(word: word))
             }
         } else {
             // Assign new words to existing tiles
-            for (tile, word) in zip(tiles, 两数) {
-                tile.word = word
-                tile.数 = Vocabulary.对应数[word] ?? 0
+            for (tile, word) in zip(两字卡, 两数) {
+                tile.字 = word
+                tile.数 = 数目字.对应数[word] ?? 0
             }
         }
     }
