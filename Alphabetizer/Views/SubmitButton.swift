@@ -20,7 +20,8 @@ struct SubmitButton: View {
     }
     
     var isEnabled: Bool {
-        alphabetizer.message == .instructions
+        return true
+        //alphabetizer.message == .instructions
     }
 }
 

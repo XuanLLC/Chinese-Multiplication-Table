@@ -4,11 +4,11 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             //ScoreView()
-            //MessageView()
+            MessageView()
             Spacer()
             WordCanvas()
             Spacer()
-            //SubmitButton()
+            SubmitButton()
         }
         .padding(.top, 50)
     }

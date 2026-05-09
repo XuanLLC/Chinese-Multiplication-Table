@@ -4,7 +4,7 @@ struct Vocabulary {
     let words: [String]
 
     /// - returns: `count` unique, random words from `words`, guaranteed unsorted
-    func selectRandomWords(count: Int) -> [String] {
+    func 随机选取几个(count: Int) -> [String] {
         var newWords = Array(words.shuffled().prefix(count))
         while newWords.sorted() == newWords {
             newWords.shuffle()
@@ -49,5 +49,11 @@ extension Vocabulary {
         "貮",
         "叁",
         "肆",
+    ])
+    
+    static let 三十五 = Vocabulary(words: [
+        "三",
+        "十",
+        "五",
     ])
 }

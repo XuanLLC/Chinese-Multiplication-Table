@@ -2,16 +2,16 @@ import Foundation
 
 @Observable
 class Alphabetizer {
-    private let tileCount = 4
-    private var vocab: Vocabulary
+    private let 字数 = 4
+    private var 数字: Vocabulary
 
     var tiles = [Tile]()
     var score = 0
-    var message: Message = .instructions
+    var message: String = ""
 
     init(vocab: Vocabulary = .正体) {
-        self.vocab = vocab
-        startNewGame()
+        self.数字 = vocab
+        开新局()
     }
     
     /// Checks if tiles are in alphabetical order
@@ -31,7 +31,7 @@ class Alphabetizer {
         }
         
         // Update the message to win or lose
-        message = isAlphabetized ? .youWin : .再试
+        message = "333"
         
         // Flip over correct tiles
         for (tile, correctTile) in zip(userSortedTiles, alphabeticallySortedTiles) {
@@ -44,8 +44,9 @@ class Alphabetizer {
             try await Task.sleep(for: .seconds(2))
             
             // If alphabetized, generate new tiles
+            var 积 = 1
             if isAlphabetized {
-                startNewGame()
+                积 = 开新局()
             }
 
             // Flip tiles back to words
@@ -54,32 +55,42 @@ class Alphabetizer {
             }
 
             // 恢复指令 Display instructions
-            message = .instructions
+            message = String(积)
         }
         
     }
     // MARK: private implementation
 
     /// Updates `tiles` with a new set of unalphabetized words
-    private func startNewGame() {
-        let newWords = vocab.selectRandomWords(count: tileCount)
+    private func 开新局() -> Int {
+        let 两数 = 数字.随机选取几个(count: 2)
         if tiles.isEmpty {
-            for word in newWords {
+            var 积 = 1
+            for word in 两数 {
                 var 简体 = "一"
+                var 数 = 1
                 if word == "貮" {
                     简体 = "二"
+                    数 = 2
                 } else if word == "叁" {
                     简体 = "三"
+                    数 = 3
                 } else if word == "肆" {
                     简体 = "四"
+                    数 = 4
                 }
-                tiles.append(Tile(word: word, 简体: 简体))
+                tiles.append(Tile(word: word, 简体: 简体, 数: 数))
+                积 = 积 * 数
             }
+            return 积
         } else {
             // Assign new words to existing tiles
-            for (tile, word) in zip(tiles, newWords) {
+            var 积 = 1
+            for (tile, word) in zip(tiles, 两数) {
                 tile.word = word
+                积 = 积 * tile.数
             }
+            return 积
         }
     }
 }
