@@ -17,21 +17,19 @@ class Alphabetizer {
     /// Checks if tiles are in alphabetical order
     func 揭晓答案() {
         
-        // Update the message to win or lose
-        message = "自己算："
-            
-            var 积 = 1
-            // Flip tiles back to words
-            for tile in tiles {
-                tile.flipped = false
-                print(tile.数)
-                积 = 积 * (tile.数)
-                print("积："+String(积))
-            }
+        var 积 = 1
+        // Flip tiles back to words
+        for tile in tiles {
+            tile.flipped = false
+            print(tile.数)
+            积 = 积 * (tile.数)
+            print("积："+String(积))
+        }
 
-            // 恢复指令 Display instructions
-            message = String(积)
-        
+        // 恢复指令 Display instructions
+        message = String(积)
+
+        开新局()
     }
     // MARK: private implementation
 
@@ -46,6 +44,7 @@ class Alphabetizer {
             // Assign new words to existing tiles
             for (tile, word) in zip(tiles, 两数) {
                 tile.word = word
+                tile.数 = Vocabulary.对应数[word] ?? 0
             }
         }
     }
