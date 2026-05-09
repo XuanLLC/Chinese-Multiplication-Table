@@ -13,21 +13,17 @@ struct Vocabulary {
     }
     
     // Each vocabulary word should have a corresponding emoji
-    static let icons: [String: String] = [
-        "Bear": "🐻",
-        "Crab": "🦀",
-        "Duck": "🦆",
-        "Frog": "🐸",
-        "Fox": "🦊",
-        "Goose": "🪿",
-        "Horse": "🐴",
-        "Jellyfish": "🪼",
-        "Lizard": "🦎",
-        "Octopus": "🐙",
-        "Panda": "🐼",
-        "Rabbit": "🐰",
-        "Sheep": "🐑",
-        "Whale": "🐳",
+    
+    static let 对应数: [String: Int] = [
+        "一": 1,
+        "二": 2,
+        "三": 3,
+        "四": 4,
+        "五": 5,
+        "六": 6,
+        "七": 7,
+        "八": 8,
+        "九": 9,
     ]
 }
 
@@ -43,7 +39,7 @@ extension Vocabulary {
         "八",
         "九",
     ])
-
+    
     static let 正体 = Vocabulary(words: [
         "壹",
         "貮",

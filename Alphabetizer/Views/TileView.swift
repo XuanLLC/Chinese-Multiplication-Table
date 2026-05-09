@@ -8,7 +8,7 @@ struct TileView: View {
     var body: some View {
         VStack {
             if tile.flipped {
-                Text(tile.简体)
+                Text(tile.word)
                     .font(Font.system(size: 40))
             } else {
                 Text(tile.word)
@@ -32,7 +32,7 @@ struct TileView: View {
 }
 
 #Preview {
-    let tile = Tile(word: "貮", 简体: "二", 数: 2)
+    let tile = Tile(word: "二")
     return TileView(tile: tile)
         .onTapGesture {
             tile.flipped.toggle()
