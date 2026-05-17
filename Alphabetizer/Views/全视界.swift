@@ -13,7 +13,7 @@ struct 全视界: View {
                 .tabItem {
                     Label("", systemImage: "1.circle")
                 }
-            Text("二档")
+            视界2()
                 .tabItem {
                     Label("", systemImage: "2.circle")
             }

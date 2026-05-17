@@ -5,7 +5,9 @@ class 乘法口诀 {
     private var 数字: 数目字
 
     var 两字卡 = [字卡]()
+    var 积值: Int = 0
     var 积输出: String = ""
+    var 积中文输出: String = ""
 
     init(vocab: 数目字 = .九宫) {
         self.数字 = vocab
@@ -22,9 +24,21 @@ class 乘法口诀 {
             积 = 积 * (tile.数)
             //print("积："+String(积))
         }
-
+        积值 = 积
         积输出 = String(积)
 
+        if 积 < 10 {
+            积中文输出 = 数目字.对应字[积]!
+        } else {
+            let 个位值 = 积值 % 10
+            let 十位值 = (积值 - 个位值)/10
+            if 十位值 != 0 {
+                积中文输出 = 数目字.对应字[十位值]! + "十"
+            }
+            if 个位值 != 0 {
+                积中文输出 += 数目字.对应字[个位值]!
+            }
+        }
         开新局()
     }
     // MARK: private implementation
