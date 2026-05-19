@@ -26,17 +26,6 @@ struct 两卡视界: View {
                 setInitialTilePositions()
             }
         }
-        /*
-        .onChange(of: alphabetizer.message) { oldValue, newValue in
-            switch (oldValue, newValue) {
-            case (.youWin, .instructions):
-                withAnimation {
-                    setInitialTilePositions()
-                }
-            default:
-                break
-            }
-        }*/
     }
 }
 

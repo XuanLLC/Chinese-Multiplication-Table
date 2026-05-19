@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// 待做：与积视界雷同，待重构
 struct 积中文视界: View {
     @Environment(乘法口诀.self) private var alphabetizer
 
