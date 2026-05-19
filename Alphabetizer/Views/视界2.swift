@@ -10,7 +10,7 @@ import SwiftUI
 struct 视界2: View {
     var body: some View {
         VStack(spacing: 15) {
-            积中文视界()
+            积视界(中文: true)
             两卡视界()
             下一个()
         }
