@@ -2,6 +2,7 @@ import SwiftUI
 
 struct 两卡视界: View {
     @Environment(乘法口诀.self) private var alphabetizer
+    var 按序点选 = false
     
     private var tiles: [字卡] {
         alphabetizer.两字卡
@@ -13,7 +14,11 @@ struct 两卡视界: View {
                 字卡视界(tile: tile)
                     .offset(tile.centeredOffset)
                     .onTapGesture {
-                        tile.flipped.toggle()
+                        if 按序点选 {
+                            alphabetizer.点选字卡(tile)
+                        } else {
+                            tile.flipped.toggle()
+                        }
                     }
             }
             .offset(x: 字卡.halfSize)
