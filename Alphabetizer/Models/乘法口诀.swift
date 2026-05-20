@@ -17,41 +17,53 @@ class 乘法口诀 {
         准备九字卡()
         开新局()
     }
-    
+
     func 揭晓答案() {
         更新积输出()
         开新局()
     }
 
-    func 准备先小后大题() {
-        开新局(先小后大: false)
-        更新积输出()
+    func 开新局(显示积: Bool = false, 随机顺序: Bool = false) {
+        var 两数 = 数字.随机选取几个(count: 2)
+        if 随机顺序 {
+            两数.shuffle()
+        }
+        if 两字卡.isEmpty {
+            for word in 两数 {
+                两字卡.append(字卡(word: word))
+            }
+        } else {
+            // Assign new words to existing tiles
+            for (tile, word) in zip(两字卡, 两数) {
+                tile.字 = word
+                tile.数 = 数目字.对应数[word] ?? 0
+                tile.flipped = false
+            }
+        }
+        if 显示积 {
+            更新积输出()
+        }
     }
 
-    func 点选字卡(_ 所点字卡: 字卡) {
-        let 正序字卡 = 两字卡.sorted { $0.数 < $1.数 }
-        guard 正序字卡.count == 2 else {
+    func 按先小后大点击(_ 字卡: 字卡) {
+        if 字卡.flipped {
             return
         }
 
-        if !正序字卡[0].flipped {
-            guard 所点字卡 == 正序字卡[0] else {
-                return
+        let 已点击数 = 两字卡.filter { $0.flipped }.count
+        let 正确顺序 = 两字卡.sorted { $0.数 < $1.数 }
+        if 正确顺序[已点击数] == 字卡 {
+            字卡.flipped = true
+            if 两字卡.allSatisfy({ $0.flipped }) {
+                开新局(显示积: true, 随机顺序: true)
             }
-            所点字卡.flipped = true
-            return
+        } else {
+            两字卡.forEach { $0.flipped = false }
         }
-        
-        guard 所点字卡 == 正序字卡[1] else {
-            return
-        }
-        所点字卡.flipped = true
-        准备先小后大题()
     }
 
     func 准备九宫题() {
-        开新局(先小后大: false)
-        更新积输出()
+        开新局(显示积: true, 随机顺序: true)
         重置九宫点选()
     }
 
@@ -75,29 +87,13 @@ class 乘法口诀 {
     }
 
     private func 更新积输出() {
+        var 积 = 1
         for tile in 两字卡 {
-            tile.flipped = false
+            积 = 积 * tile.数
         }
-
-        let 积 = 两字卡.reduce(1) { $0 * $1.数 }
         积值 = 积
         积输出 = String(积)
         积中文输出 = 积的中文(积)
-    }
-
-    private func 开新局(先小后大: Bool = true) {
-        let 两数 = 数字.随机选取几个(count: 2, 先小后大: 先小后大)
-        if 两字卡.isEmpty {
-            for word in 两数 {
-                两字卡.append(字卡(word: word))
-            }
-        } else {
-            // Assign new words to existing tiles
-            for (tile, word) in zip(两字卡, 两数) {
-                tile.字 = word
-                tile.数 = 数目字.对应数[word] ?? 0
-            }
-        }
     }
 
     private func 重置九宫点选() {

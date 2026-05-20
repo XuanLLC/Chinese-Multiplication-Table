@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct 视界4: View {
-    @Environment(乘法口诀.self) private var alphabetizer
+    @State private var 口诀 = 乘法口诀()
 
     var body: some View {
         VStack(spacing: 15) {
@@ -16,13 +16,13 @@ struct 视界4: View {
             九宫视界()
         }
         .padding(.top, 60)
+        .environment(口诀)
         .onAppear {
-            alphabetizer.准备九宫题()
+            口诀.准备九宫题()
         }
     }
 }
 
 #Preview {
     视界4()
-        .environment(乘法口诀())
 }
