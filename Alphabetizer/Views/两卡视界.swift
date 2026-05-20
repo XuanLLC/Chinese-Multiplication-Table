@@ -2,6 +2,9 @@ import SwiftUI
 
 struct 两卡视界: View {
     @Environment(乘法口诀.self) private var alphabetizer
+    var 点击字卡: (字卡) -> Void = { 字卡 in
+        字卡.flipped.toggle()
+    }
     
     private var tiles: [字卡] {
         alphabetizer.两字卡
@@ -13,7 +16,7 @@ struct 两卡视界: View {
                 字卡视界(tile: tile)
                     .offset(tile.centeredOffset)
                     .onTapGesture {
-                        tile.flipped.toggle()
+                        点击字卡(tile)
                     }
             }
             .offset(x: 字卡.halfSize)
