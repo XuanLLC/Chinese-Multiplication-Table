@@ -264,7 +264,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cc.ChineseMultiplicationTable;
 				PRODUCT_NAME = "Chinese Multiplication Table";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -293,7 +293,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cc.ChineseMultiplicationTable;
 				PRODUCT_NAME = "Chinese Multiplication Table";
 				SWIFT_EMIT_LOC_STRINGS = YES;
