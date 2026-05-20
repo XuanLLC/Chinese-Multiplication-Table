@@ -3,14 +3,18 @@ import Foundation
 @Observable
 class 乘法口诀 {
     private var 数字: 数目字
+    private var 九宫点选积 = 1
+    private var 九宫点选数 = 0
 
     var 两字卡 = [字卡]()
+    var 九字卡 = [字卡]()
     var 积值: Int = 0
     var 积输出: String = ""
     var 积中文输出: String = ""
 
     init(vocab: 数目字 = .九宫) {
         self.数字 = vocab
+        准备九字卡()
         开新局()
     }
     
@@ -45,7 +49,30 @@ class 乘法口诀 {
         准备先小后大题()
     }
 
+    func 准备九宫题() {
+        开新局(先小后大: false)
+        更新积输出()
+        重置九宫点选()
+    }
+
+    func 点选九宫字卡(_ 所点字卡: 字卡) {
+        let 新积 = 九宫点选积 * 所点字卡.数
+        if 积值 % 新积 == 0 {
+            接受九宫点选(所点字卡, 新积: 新积)
+            return
+        }
+
+        重置九宫点选()
+        if 积值 % 所点字卡.数 == 0 {
+            接受九宫点选(所点字卡, 新积: 所点字卡.数)
+        }
+    }
+
     // MARK: private implementation
+
+    private func 准备九字卡() {
+        九字卡 = 数目字.九宫.words.map { 字卡(word: $0) }
+    }
 
     private func 更新积输出() {
         for tile in 两字卡 {
@@ -70,6 +97,24 @@ class 乘法口诀 {
                 tile.字 = word
                 tile.数 = 数目字.对应数[word] ?? 0
             }
+        }
+    }
+
+    private func 重置九宫点选() {
+        九宫点选积 = 1
+        九宫点选数 = 0
+        for tile in 九字卡 {
+            tile.flipped = false
+        }
+    }
+
+    private func 接受九宫点选(_ 所点字卡: 字卡, 新积: Int) {
+        九宫点选积 = 新积
+        九宫点选数 += 1
+        所点字卡.flipped = true
+
+        if 九宫点选积 == 积值 && 九宫点选数 >= 2 {
+            准备九宫题()
         }
     }
 
