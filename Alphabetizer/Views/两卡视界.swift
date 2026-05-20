@@ -5,7 +5,7 @@ struct 两卡视界: View {
     var 点击字卡: (字卡) -> Void = { 字卡 in
         字卡.flipped.toggle()
     }
-    
+
     private var tiles: [字卡] {
         alphabetizer.两字卡
     }

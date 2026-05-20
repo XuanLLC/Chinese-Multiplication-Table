@@ -3,14 +3,12 @@ import Foundation
 struct 数目字 {
     let words: [String]
 
-    /// - returns: `count` unique, random words from `words`, guaranteed unsorted
-    func 随机选取几个(count: Int) -> [String] {
-        var newWords = Array(words.shuffled().prefix(count))
-        while newWords.sorted() == newWords {
-            newWords.shuffle()
+    func 随机选取几个(count: Int, 先小后大: Bool = true) -> [String] {
+        let 新字 = Array(words.shuffled().prefix(count))
+        if 先小后大 {
+            return 新字.sorted { 数目字.对应数[$0] ?? 0 < 数目字.对应数[$1] ?? 0 }
         }
-        let 先小后大 = newWords.sorted { 数目字.对应数[$0] ?? 0 < 数目字.对应数[$1] ?? 0 }
-        return 先小后大
+        return 新字.shuffled()
     }
     
     static let 对应数: [String: Int] = [

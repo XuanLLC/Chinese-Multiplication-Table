@@ -21,6 +21,10 @@ struct 全视界: View {
                 .tabItem {
                     Label("", systemImage: "3.circle")
             }
+            视界4()
+                .tabItem {
+                    Label("", systemImage: "4.circle")
+            }
         }
     }
 }
